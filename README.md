@@ -1,5 +1,5 @@
 # STC-HCW
-**高速公路施工建筑工人安全培训语料库**
+**公路施工人员安全培训语料库**
 
 用于创建 STC-HCW 的 Python 脚本和工具集，专为公路施工安全培训中的自然语言处理任务设计。
 
@@ -12,29 +12,34 @@
 ```
 STC-HCW/
 ├── README.md
-├── BIO_check.py
-├── bio_delete.py
-├── bio_merge.py
-├── bio_spilt.py
-├── csv_to_bio_fengxian.py
-├── csv_to_bio_yingji.py
-├── csv_to_bio_zuoye.py
-├── csv_to_txt_fengxian.py
-├── csv_to_txt_yingji.py
-├── csv_to_txt_zuoye.py
-├── excel_3file_yingji.py
-├── excel_3file_zuoye+fengxian.py
-├── json_to_bio.py
-├── jsonl_to_json.py
-├── xlsx_to_csv.py
-├── data/          # NER任务数据
-└── data02/        # 三元组抽取任务数据
+├── .gitignore
+├── 01data_preprocess/     # 第一组脚本：NER任务（Doccano集成）
+│   ├── jsonl_to_json.py
+│   └── json_to_bio.py
+├── 02data_preprocess/    # 第二组脚本：NER任务（关键词体系）
+│   ├── csv_to_bio_fengxian.py
+│   ├── csv_to_bio_yingji.py
+│   ├── csv_to_bio_zuoye.py
+│   ├── csv_to_txt_fengxian.py
+│   ├── csv_to_txt_yingji.py
+│   └── csv_to_txt_zuoye.py
+├── 03data_preprocess/    # 第三组脚本：三元组抽取（NER+RE）
+│   ├── excel_3file_yingji.py
+│   └── excel_3file_zuoye+fengxian.py
+├── 04data_preprocess/    # 第四组脚本：通用数据处理
+│   ├── BIO_check.py
+│   ├── bio_delete.py
+│   ├── bio_merge.py
+│   ├── bio_spilt.py
+│   └── xlsx_to_csv.py
+├── data/               # NER任务数据
+└── 02data/               # 三元组抽取任务数据
 ```
 
 ## 🛠️ 脚本功能分类
 
-### 🔹 第一组：NER 任务（Doccano 平台集成）
-**脚本：** `jsonl_to_json.py` | `json_to_bio.py`
+### 🔹 第一组01data_preprocess：NER 任务（Doccano 平台集成）
+**脚本路径：** `01data_preprocess/jsonl_to_json.py` | `01data_preprocess/json_to_bio.py`
 
 **用途：** 处理来自 Doccano 标注平台的数据
 - 将需要标注的文本上传到 Doccano 平台
@@ -49,10 +54,10 @@ Doccano 平台 → JSONL 格式 → JSON 格式 → BIO 标注文件
 
 ---
 
-### 🔹 第二组：NER 任务（关键词体系）
-**脚本：**
-- **文本生成：** `csv_to_txt_fengxian.py` | `csv_to_txt_yingji.py` | `csv_to_txt_zuoye.py`
-- **BIO 标注：** `csv_to_bio_fengxian.py` | `csv_to_bio_yingji.py` | `csv_to_bio_zuoye.py`
+### 🔹 第二组02data_preprocess：NER 任务（关键词体系）
+**脚本路径：**
+- **文本生成：** `02data_preprocess/csv_to_txt_fengxian.py` | `02data_preprocess/csv_to_txt_yingji.py` | `02data_preprocess/csv_to_txt_zuoye.py`
+- **BIO 标注：** `02data_preprocess/csv_to_bio_fengxian.py` | `02data_preprocess/csv_to_bio_yingji.py` | `02data_preprocess/csv_to_bio_zuoye.py`
 
 **用途：** 从关键词体系表格自动生成训练数据
 - `csv_to_txt` 系列：将分类好的关键词体系表格（CSV 格式）依据设定好的句式模板生成文档（TXT 格式）
@@ -65,8 +70,8 @@ CSV 关键词表格 → 句式模板 → BIO 标注文件
 
 ---
 
-### 🔹 第三组：三元组抽取（NER + RE 任务）
-**脚本：** `excel_3file_zuoye+fengxian.py` | `excel_3file_yingji.py`
+### 🔹 第三组03data_preprocess：三元组抽取（NER + RE 任务）
+**脚本路径：** `03data_preprocess/excel_3file_zuoye+fengxian.py` | `03data_preprocess/excel_3file_yingji.py`
 
 **用途：** 同时生成 NER 和 RE 任务的训练数据
 - **输出1：** `text.txt` - 将表格内关键词依据句式模板生成的段落
@@ -80,24 +85,30 @@ CSV 关键词表格 → 三个文件（文本 + BIO 标注 + 关系标注）
 
 ---
 
-### 🔹 第四组：通用数据处理
-**脚本：** `BIO_check.py` | `bio_delete.py` | `bio_merge.py` | `bio_spilt.py` | `xlsx_to_csv.py`
+### 🔹 第四组04data_preprocess：通用数据处理
+**脚本路径：** `04data_preprocess/BIO_check.py` | `04data_preprocess/bio_delete.py` | `04data_preprocess/bio_merge.py` | `04data_preprocess/bio_spilt.py` | `04data_preprocess/xlsx_to_csv.py`
 
 | 脚本 | 功能说明 |
 |------|----------|
-| `BIO_check.py` | 检查 BIO 标注文件是否存在格式错误，删除错误行生成正确格式的文件 |
-| `bio_delete.py` | 删除 BIO 标注文件中具备特定标签的行 |
-| `bio_merge.py` | 将多个 BIO 标注文件合并为一个 |
-| `bio_spilt.py` | 将单个 BIO 标注文件拆分为均等的多个文件 |
-| `xlsx_to_csv.py` | 将 XLSX 格式文件转为 CSV 格式，并按要求删除错误行 |
+| `04data_preprocess/BIO_check.py` | 检查 BIO 标注文件是否存在格式错误，删除错误行生成正确格式的文件 |
+| `04data_preprocess/bio_delete.py` | 删除 BIO 标注文件中具备特定标签的行 |
+| `04data_preprocess/bio_merge.py` | 将多个 BIO 标注文件合并为一个 |
+| `04data_preprocess/bio_spilt.py` | 将单个 BIO 标注文件拆分为均等的多个文件 |
+| `04data_preprocess/xlsx_to_csv.py` | 将 XLSX 格式文件转为 CSV 格式，并按要求删除错误行 |
 
 ## 📂 数据文件夹说明
 
 ### `data/` 文件夹
+包含原始数据文件和基础数据。
+
+### `02data/` 文件夹
 包含使用**第一组和第二组**脚本处理后的文件，可直接用于 NER 任务训练。
 
-### `data02/` 文件夹
-包含使用**第三组**脚本处理后的文件，可直接用于三元组抽取（NER + RE）任务训练。
+### `data_preprocess/` 文件夹组
+- **`01data_preprocess/`**：Doccano 平台数据处理脚本
+- **`02data_preprocess/`**：关键词体系数据处理脚本
+- **`03data_preprocess/`**：三元组抽取数据处理脚本
+- **`04data_preprocess/`**：通用数据处理工具脚本
 
 ## 🚀 使用建议
 
@@ -151,4 +162,3 @@ CSV 关键词表格 → 三个文件（文本 + BIO 标注 + 关系标注）
 - 应急响应处置
 - 作业操作规范
 - 实体关系抽取
-
