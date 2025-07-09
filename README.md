@@ -9,29 +9,29 @@
 
 ```
 STC-HCW/
-├── README.md
-├── .gitignore
-├── 01data_preprocess/     # 第一组脚本：NER任务（Doccano集成）
+├── README.md                   # 中文版README文件
+├── README_EN.md                # English version of the README file
+├── 01data_preprocess/          # doccano 平台相关数据预处理脚本
 │   ├── jsonl_to_json.py
 │   └── json_to_bio.py
-├── 02data_preprocess/    # 第二组脚本：NER任务（关键词体系）
+├── 02data_preprocess/           # NER任务相关数据预处理脚本
 │   ├── csv_to_bio_fengxian.py
 │   ├── csv_to_bio_yingji.py
 │   ├── csv_to_bio_zuoye.py
 │   ├── csv_to_txt_fengxian.py
 │   ├── csv_to_txt_yingji.py
 │   └── csv_to_txt_zuoye.py
-├── 03data_preprocess/    # 第三组脚本：三元组抽取（NER+RE）
+├── 03data_preprocess/           # 三元组抽取任务相关数据预处理脚本
 │   ├── excel_3file_yingji.py
 │   └── excel_3file_zuoye+fengxian.py
-├── 04data_preprocess/    # 第四组脚本：通用数据处理
+├── 04data_preprocess/           # 通用数据处理脚本
 │   ├── BIO_check.py
 │   ├── bio_delete.py
 │   ├── bio_merge.py
 │   ├── bio_spilt.py
 │   └── xlsx_to_csv.py
-├── data/               # NER任务数据
-└── 02data/               # 三元组抽取任务数据
+├── data/                       # NER task related data
+└── data02/                     # Triplet extraction related data
 ```
 
 ## 🛠️ 脚本功能分类
