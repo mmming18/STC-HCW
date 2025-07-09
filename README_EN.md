@@ -1,7 +1,6 @@
 # STC-HCW
 **A Safety Training Corpus for Highway Construction Workers**
 
-Python scripts and utilities for creating STC-HCW, a comprehensive corpus designed for natural language processing tasks in highway construction safety training.
 
 ## 📋 Overview
 
@@ -12,28 +11,28 @@ This repository contains utility scripts and datasets for natural language proce
 ```
 STC-HCW/
 ├── README.md
-├── README_EN.md
-├── scripts/           # All python scripts 
-│   ├── ner_tasks/     # NER task related scripts
-│   │   ├── jsonl_to_json.py
-│   │   ├── json_to_bio.py
-│   │   ├── csv_to_bio_fengxian.py
-│   │   ├── csv_to_bio_yingji.py
-│   │   ├── csv_to_bio_zuoye.py
-│   │   ├── csv_to_txt_fengxian.py
-│   │   ├── csv_to_txt_yingji.py
-│   │   └── csv_to_txt_zuoye.py
-│   ├── triple_extraction/  # Triplet extraction related scripts
-│   │   ├── excel_3file_yingji.py
-│   │   └── excel_3file_zuoye+fengxian.py
-│   └── utils/         # General data processing scripts
-│       ├── BIO_check.py
-│       ├── bio_delete.py
-│       ├── bio_merge.py
-│       ├── bio_spilt.py
-│       └── xlsx_to_csv.py
-├── data/              # NER task related data
-└── data02/            # Triplet extraction related data
+├── README_EN.md 
+├── 01data_preprocess/          # Doccano data preprocess related scripts
+│   ├── jsonl_to_json.py
+│   └──  json_to_bio.py
+├──02data_preprocess/           # NER task related scripts
+│   ├── csv_to_bio_fengxian.py
+│   ├── csv_to_bio_yingji.py
+│   ├── csv_to_bio_zuoye.py
+│   ├── csv_to_txt_fengxian.py
+│   ├── csv_to_txt_yingji.py
+│   └── csv_to_txt_zuoye.py
+├──02data_preprocess/           # Triplet extraction related scripts
+│   ├── excel_3file_yingji.py
+│   └── excel_3file_zuoye+fengxian.py
+├──02data_preprocess/           # General data processing scripts
+│   ├── BIO_check.py
+│   ├── bio_delete.py
+│   ├── bio_merge.py
+│   ├── bio_spilt.py
+│   └── xlsx_to_csv.py
+├── data/                       # NER task related data
+└── data02/                     # Triplet extraction related data
 ```
 
 ## 🛠️ Script Categories
