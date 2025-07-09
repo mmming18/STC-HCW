@@ -15,17 +15,17 @@ STC-HCW/
 ├── 01data_preprocess/          # Doccano data preprocess related scripts
 │   ├── jsonl_to_json.py
 │   └──  json_to_bio.py
-├──02data_preprocess/           # NER task related scripts
+├── 02data_preprocess/           # NER task related scripts
 │   ├── csv_to_bio_fengxian.py
 │   ├── csv_to_bio_yingji.py
 │   ├── csv_to_bio_zuoye.py
 │   ├── csv_to_txt_fengxian.py
 │   ├── csv_to_txt_yingji.py
 │   └── csv_to_txt_zuoye.py
-├──02data_preprocess/           # Triplet extraction related scripts
+├── 03data_preprocess/           # Triplet extraction related scripts
 │   ├── excel_3file_yingji.py
 │   └── excel_3file_zuoye+fengxian.py
-├──02data_preprocess/           # General data processing scripts
+├── 04data_preprocess/           # General data processing scripts
 │   ├── BIO_check.py
 │   ├── bio_delete.py
 │   ├── bio_merge.py
