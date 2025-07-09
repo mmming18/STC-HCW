@@ -30,8 +30,8 @@ STC-HCW/
 │   ├── bio_merge.py
 │   ├── bio_spilt.py
 │   └── xlsx_to_csv.py
-├── data/                       # NER task related data
-└── data02/                     # Triplet extraction related data
+├── data/                       # 可用于NER任务的数据集
+└── data02/                     # 可用于三元组抽取任务（NER+RE）的数据集
 ```
 
 ## 🛠️ 脚本功能分类
