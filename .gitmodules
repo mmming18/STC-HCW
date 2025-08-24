@@ -1,0 +1,6 @@
+[submodule "data"]
+	path = data
+	url = https://github.com/mmming18/STC-HCW-data
+[submodule "02data"]
+	path = 02data
+	url = https://github.com/mmming18/STC-HCW-02data
