@@ -32,7 +32,8 @@ STC-HCW/
 │   ├── bio_spilt.py
 │   └── xlsx_to_csv.py
 ├── data/                       # NER task related data
-└── 02data/                     # Triplet extraction related data
+├── 02data/                     # Triplet extraction related data
+└── vedio_data/                 # vidio resourses data
 ```
 
 ## 🛠️ Script Categories
@@ -103,7 +104,10 @@ Contains processed files from **Groups 1 & 2** scripts, ready for NER task train
 ### `02data/` Directory
 Contains processed files from **Group 3** scripts, ready for triple extraction (NER + RE) task training.
 
-## 🔒 Access Restrictions
+### `vedio_data/` Directory
+Contains processed vedio resourses data.
+
+## 🔒 `data/` and `02data/` Access Restrictions
 Due to the sensitivity and size of the data files, the above two data directories have been set up as Git submodules pointing to private repositories.
 - **Directory structure is visible**: You can view the complete folder structure and file list in this repository.
 - **Content access is restricted**: The actual file content is stored in private repositories and requires specific permissions to access.
